@@ -1,34 +1,42 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import { Link } from 'gatsby'
+import PropTypes from 'prop-types'
+import React from 'react'
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
+  <nav className="navbar navbar-fixed-top navbar-inverse">
+    <div className="container-fluid">
+      <div className="navbar-header">
+        <button
+          type="button"
+          className="navbar-toggle collapsed"
+          data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1"
+          aria-expanded="false"
         >
+          <span className="sr-only">Toggle navigation</span>
+          <span className="icon-bar" />
+          <span className="icon-bar" />
+          <span className="icon-bar" />
+        </button>
+        <Link className="navbar-brand" to="/">
           {siteTitle}
         </Link>
-      </h1>
+      </div>
+      <div
+        className="collapse navbar-collapse"
+        id="bs-example-navbar-collapse-1"
+      >
+        <ul className="nav navbar-nav navbar-right">
+          <li>
+            <Link to="/#about">ABOUT</Link>
+          </li>
+          <li>
+            <Link to="/#updates">UPDATES</Link>
+          </li>
+        </ul>
+      </div>
     </div>
-  </header>
+  </nav>
 )
 
 Header.propTypes = {
