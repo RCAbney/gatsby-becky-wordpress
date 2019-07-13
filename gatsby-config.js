@@ -39,7 +39,7 @@ module.exports = {
         baseUrl: `becky365.com`,
         protocol: `http`,
         hostingWPCOM: false,
-        useACF: false
+        useACF: false,
       }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

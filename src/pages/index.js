@@ -1,7 +1,5 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Link } from "gatsby"
-import Img from "gatsby-image"
 import FolioItem from "../components/folioItem"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -34,22 +32,6 @@ const IndexPage = ({ data }) => (
             src={node.featured_media.source_url}
             fluid={node.featured_media.localFile.childImageSharp.fluid}
           />
-          // <div className="col-md-3 col-sm-6" key={node.id}>
-          //   <Img
-          //     alt={node.title}
-          //     fluid={node.featured_media.localFile.childImageSharp.fluid}
-          //     className="img-responsive folio-pic"
-          //   />
-          //   <img alt={node.title} src="https://placehold.it/700x700" />
-          //   <div className="folio-item">
-          //     <div className="folio-item-details">
-          //       <h2 className="entry-title">
-          //         <Link to={node.slug}>{node.title}</Link>
-          //       </h2>
-          //       <p>{node.date}</p>
-          //     </div>
-          //   </div>
-          // </div>
         ))}
       </div>
     </div>
@@ -60,7 +42,7 @@ export default IndexPage
 
 export const postQuery = graphql`
   query {
-    allWordpressPost(sort: {fields: [date], order: DESC}) {
+    allWordpressPost(sort: { fields: [date], order: DESC }) {
       edges {
         node {
           id
@@ -71,7 +53,7 @@ export const postQuery = graphql`
           featured_media {
             localFile {
               childImageSharp {
-                fluid(maxWidth: 1000) {
+                fluid(maxWidth: 768) {
                   ...GatsbyImageSharpFluid
                 }
               }
